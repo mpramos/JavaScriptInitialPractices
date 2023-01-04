@@ -1,0 +1,5 @@
+# JavaScriptInitialPractices![image](https://user-images.githubusercontent.com/47164453/210645231-4385cc84-c5c8-4cce-a33c-05883f1fecc4.png)
+![image](https://user-images.githubusercontent.com/47164453/210645314-ee03442f-4536-4615-9c17-1f44dda5ac30.png)
+![image](https://user-images.githubusercontent.com/47164453/210645341-b2602986-9542-4011-9c9b-4ed6772307ba.png)
+![image](https://user-images.githubusercontent.com/47164453/210645366-32f72afa-9394-40b3-b288-b345268caa78.png)
+![image](https://user-images.githubusercontent.com/47164453/210645383-3c9264f0-d4c3-46f1-8d02-1bb5fcf5ca49.png)
