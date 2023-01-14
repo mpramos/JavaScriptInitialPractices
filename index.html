@@ -7,44 +7,26 @@
     <title>Document</title>
 </head>
 <body>
-   <script>
-    let continuar=false
-    alert ('Bienvenid@ a su calculadora personal 📠')
-    while (!continuar) {
-       let operando_a= parseInt( prompt('Introduzca el primer numero')) 
-       let operando_b=parseInt(prompt('Introduzca el segundo numero')) 
-      operacion= prompt(`Bienvenid@s a su calculadora personal 🤓
-       Por favor escoga cual de las siguientes operaciones va a realizar
-       a.- Sumar ➕
-       b.- Restar ➖
-       c.- Multiplicar ✖
-       d.- Dividir ➗
-       
-       `)
-       let resultado
-       switch (operacion.toLocaleLowerCase()) {
-           case 'a':
-               resultado= operando_a + operando_b
-               break;
-               case 'b':
-                   resultado= operando_a - operando_b
-                   break;
-                   case 'c':
-                       resultado= operando_a*operando_b
-                       break;
-                       case 'd':
-                           resultado= operando_a/operando_b
-                           break;
-                           default:
-                            console.log('valor incorrecto');
-                               break;
-                            }
-       alert(resultado)
-       let salir= prompt(`¿Quieres realizar otra operación? 
-    Escriba 'si' para confirmar y 'no' para salir
-       `)
-        salir.toLocaleLowerCase()!=='si'?continuar=true:continuar=false  
-    }  
-        </script>
-        </body>
-        </html>
+    <script>
+        let arrayNumeros=[]
+        let sonIguales=false
+        while (!sonIguales) {
+            let primerNumero=parseInt( prompt('Ingrese el primer numero'))
+            let segundoNumero=parseInt( prompt('Ingrese el segundo numero'))
+            let guardarNumeros=(primerNumero,segundoNumero)=>{
+                    arrayNumeros.push(primerNumero)
+                    arrayNumeros.push(segundoNumero)
+                    alert(`Los numeros guardados son ${arrayNumeros}`)
+                    return  sonIguales=true
+            }
+            let mayor =(primerNumero,segundoNumero) =>{
+                arrayNumeros.push(primerNumero)
+                arrayNumeros.push(segundoNumero)
+                primerNumero>segundoNumero? alert(`El primer numero ingresado es el mayor ${primerNumero}`):alert( `El segundo numero ingresado es el mayor ${segundoNumero}`)
+            }
+            sonIguales=primerNumero===segundoNumero ? guardarNumeros(primerNumero,segundoNumero) : mayor(primerNumero,segundoNumero)
+        }
+        alert('Los numeros son iguales. Gracias por visitarnos 🤗')
+    </script>
+</body>
+</html>
