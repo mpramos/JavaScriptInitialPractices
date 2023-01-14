@@ -1,25 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+
     <script>
-        alert(`Bienvenido a AdaSchool 🤓`)
-        let nombre=prompt('Ingrese su nombre: ')
-        let apellido=prompt('Ingrese su apellido: ')
-        let persona={}
-        const datos=(nombre,apellido)=>{
-           return persona={nombre:nombre,apellido:apellido}
+        alert('Bienvenid@ a su calculadora personal 📠')
+        let operando_a = parseInt(prompt('Introduzca el primer numero'))
+        let operando_b = parseInt(prompt('Introduzca el segundo numero'))
+        let operacion= prompt(`Bienvenid@s a su calculadora personal 🤓
+       Por favor escoga cual de las siguientes operaciones va a realizar
+       a.- Sumar ➕
+       b.- Restar ➖
+       c.- Multiplicar ✖
+       d.- Dividir ➗
+       
+       `)
+        let resultado
+        const sumar = (a, b) => a + b
+        const restar = (a, b) => a - b
+        const multiplicar = (a, b) => a * b
+        const dividir = (a, b) => a / b
+
+        const calculadora = () => {
+            switch (operacion.toLocaleLowerCase()) {
+                case 'a':
+                    resultado = sumar(operando_a, operando_b)
+                    break;
+                case 'b':
+                    resultado = restar(operando_a, operando_b)
+                    break;
+                case 'c':
+                    resultado = multiplicar(operando_a, operando_b)
+                    break;
+                case 'd':
+                    resultado = dividir(operando_a, operando_b)
+                    break;
+                default:
+                    break;
+            }
+            alert(resultado)
         }
-        const imprimir=()=>{
-            let nombreCompleto=datos(nombre,apellido)
-            alert(`Hola ${nombreCompleto.nombre} ${nombreCompleto.apellido} 👋`)
-        }
-        imprimir()
+        calculadora()
+
     </script>
 </body>
+
 </html>
