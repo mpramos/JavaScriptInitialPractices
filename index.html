@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    let continuar=false
+    alert ('Bienvenid@ a su calculadora personal 📠')
+    while (!continuar) {
+       let operando_a= parseInt( prompt('Introduzca el primer numero')) 
+       let operando_b=parseInt(prompt('Introduzca el segundo numero')) 
+      operacion= prompt(`Bienvenid@s a su calculadora personal 🤓
+       Por favor escoga cual de las siguientes operaciones va a realizar
+       a.- Sumar ➕
+       b.- Restar ➖
+       c.- Multiplicar ✖
+       d.- Dividir ➗
+       
+       `)
+       let resultado
+       switch (operacion.toLocaleLowerCase()) {
+           case 'a':
+               resultado= operando_a + operando_b
+               break;
+               case 'b':
+                   resultado= operando_a - operando_b
+                   break;
+                   case 'c':
+                       resultado= operando_a*operando_b
+                       break;
+                       case 'd':
+                           resultado= operando_a/operando_b
+                           break;
+                           default:
+                            console.log('valor incorrecto');
+                               break;
+                            }
+       alert(resultado)
+       let salir= prompt(`¿Quieres realizar otra operación? 
+    Escriba 'si' para confirmar y 'no' para salir
+       `)
+        salir.toLocaleLowerCase()!=='si'?continuar=true:continuar=false  
+    }  
+        </script>
+        </body>
+        </html>
