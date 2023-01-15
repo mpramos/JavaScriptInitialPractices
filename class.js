@@ -1,12 +1,16 @@
 
-class Rectangulo{
-    constructor(longitud,ancho){
-        this.longitud=longitud
-        this.ancho=ancho
-    }
-    getPerimetro(longitud,ancho){
-        return 2*longitud + 2*ancho
+class Persona{
+constructor(nombre,edad,tipoSangre,numeroDocumento){
+    this.nombre=nombre
+    this.edad=edad
+    this.tipoSangre=tipoSangre
+    this.numeroDocumento=numeroDocumento
     }
 }
-const rectangulo=new Rectangulo()
-console.log(rectangulo.getPerimetro(2,2));
+const persona1= new Persona('Maria',14,'RH+','47474747474')
+console.log(persona1);
+const persona2= new Persona('Juana',14,'RH+','47474747474')
+console.log(persona2);
+const persona3= new Persona('Valeria',14,'RH+','47474747474')
+console.log(persona3);
+
