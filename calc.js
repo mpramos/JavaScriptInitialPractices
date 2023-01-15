@@ -87,7 +87,6 @@ function resolver() {
             console.log(res);
             res = parseFloat(operandoa) / parseFloat(operandob)
             break;
-
     }
     resetear()
     resultado.textContent = res
