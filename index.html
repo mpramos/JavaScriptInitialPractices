@@ -6,50 +6,94 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
+    <div class="title">Buscaminas Ada School</div>
+    <div class="formulario">
+        <label for="">Ingrese el numero de filas</label>
+        <input id="primera-coordenada" type="number">
+    </div>
+    <div class="formulario">
+        <label for="">Ingrese el numero de columnas</label>
+        <input id="segunda-coordenada" type="number">
+        <button onclick="jugar()">enviar</button>
+    </div>
+    <div class="box">
+        <div class="box1">
+            <div class="card1">
+                <div class="image">
+                    <img src="https://media.ada-school.org/5fcd3ac12b22eab4d301d819/5fcd49a07ffe7b324996b784/ada-logo-cfdb7c7b-1791-408f-b5b4-240b22bd1653.png?version=2"
+                        alt="">
+                </div>
+                <div class="button">
+                    <button>Nuevo Juego</button>
+                </div>
+            </div>
+        </div>
+        <div class="box2">
+            <div class="card1">
+                <div class="parrafo">
+                    <p>Puntaje :200</p>
+                </div>
+                <div >
+                    <table cellspacing=0 cellpading=0 id="tablero">
+                     
+                    </table>
+                </div>
+                <div class="parrafo">
+                    <p>Perdiste!!!</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
-        alert('Bienvenid@ a su calculadora personal 📠')
-        let operando_a = parseInt(prompt('Introduzca el primer numero'))
-        let operando_b = parseInt(prompt('Introduzca el segundo numero'))
-        let operacion= prompt(`Bienvenid@s a su calculadora personal 🤓
-       Por favor escoga cual de las siguientes operaciones va a realizar
-       a.- Sumar ➕
-       b.- Restar ➖
-       c.- Multiplicar ✖
-       d.- Dividir ➗
-       
-       `)
-        let resultado
-        const sumar = (a, b) => a + b
-        const restar = (a, b) => a - b
-        const multiplicar = (a, b) => a * b
-        const dividir = (a, b) => a / b
+        let jugar=()=>{
+            let numeroA = document.getElementById('primera-coordenada')
+            let numeroB = document.getElementById('segunda-coordenada')
+            let fila=parseInt(numeroA.value)
+            let columna=parseInt(numeroB.value)
+            let lado=30
+            let bombaRandomFila=Math.floor(Math.random()*fila)
+            let bombaRandomColumna=Math.floor(Math.random()*columna)
+            console.log(fila);
+            console.log(columna);
+            let html = ""
+            for (let i = 0; i < fila; i++) {
+                if(i===bombaRandomFila){
+                    html +=`<tr>`
+                    for (let j = 0; j <columna; j++) {
+                        if (j==bombaRandomColumna) {
+                            html += `<td>`
+                            html += `💣`
+                            html += `</td>`
+                        }else{
+                            html += `<td>`
+                            html += `1`
+                            html += `</td>`
+                        }                      
+                        }
+                        html+=`</tr>`
+                    } else {
+                        html +=`<tr>`
+                        for (let j = 0; j < columna; j++) {
+                            html += `<td>`
+                            html += `1`
+                            html += `</td>`
+                            } 
+                            html+=`</tr>`
+                }
+                    }
 
-        const calculadora = () => {
-            switch (operacion.toLocaleLowerCase()) {
-                case 'a':
-                    resultado = sumar(operando_a, operando_b)
-                    break;
-                case 'b':
-                    resultado = restar(operando_a, operando_b)
-                    break;
-                case 'c':
-                    resultado = multiplicar(operando_a, operando_b)
-                    break;
-                case 'd':
-                    resultado = dividir(operando_a, operando_b)
-                    break;
-                default:
-                    break;
-            }
-            alert(resultado)
+            let tablero=document.getElementById('tablero')
+            tablero.innerHTML=html
+            tablero.style.width=columna*60 +"px"
+            tablero.style.height=fila*60+ "px"
         }
-        calculadora()
-
+        jugar()
     </script>
 </body>
-
 </html>
